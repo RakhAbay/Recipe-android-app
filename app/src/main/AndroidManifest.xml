@@ -15,22 +15,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RecipeApp">
         <activity
-            android:name=".UserProfile.UserProfile"
+            android:name=".activites.UserProfile.UserProfile"
             android:exported="false" />
         <activity
-            android:name=".Auth.RegistrationActivity"
+            android:name=".activites.Auth.RegistrationActivity"
             android:exported="false" />
         <activity
-            android:name=".SearchRecipes.RecipesActivity"
+            android:name=".activites.SearchRecipes.RecipesActivity"
             android:exported="false" />
         <activity
-            android:name=".RecipeDetails.RecipeDetailsActivity"
+            android:name=".activites.RecipeDetails.RecipeDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".Favorites.FavoritesActivity"
+            android:name=".activites.Favorites.FavoritesActivity"
             android:exported="false" />
         <activity
-            android:name=".Auth.LoginActivity"
+            android:name=".activites.Auth.LoginActivity"
             android:exported="true"
             android:label="@string/app_name">
             <intent-filter>
