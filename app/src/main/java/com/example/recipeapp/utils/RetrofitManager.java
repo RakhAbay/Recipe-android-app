@@ -30,8 +30,8 @@ import retrofit2.http.Query;
 
 public class RetrofitManager {
 
-    private static final String RECIPES_API_BASE_URL = "https://api.spoonacular.com/recipes/";
     private static final String BACKEND_USER_API_REQUEST_URL = "http://10.0.2.2:8080/api/user/";
+    private static final String RECIPES_API_BASE_URL = "https://api.spoonacular.com/recipes/";
     private static final String RECIPE_API_KEY = "3bcec8b15ac64bea905e10fddbd9e175";
 
     Context context;

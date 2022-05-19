@@ -97,40 +97,7 @@ public class FavoritesActivity extends AppCompatActivity {
         });
         adapter = new RecipesAdapter(FavoritesActivity.this, favoriteMovies);
         recipesListView.setAdapter(adapter);
-//        retrofit = new Retrofit.Builder()
-//                .baseUrl(BASE_URL)
-//                .addConverterFactory(ScalarsConverterFactory.create())
-//                .addConverterFactory(GsonConverterFactory.create())
-//                .build();
-//        userJsonDataApi = retrofit.create(UserJsonDataApi.class);
-//        Call<User> call = userJsonDataApi.getUser(String.valueOf(loggedInUser.getUserId()));
-//        call.enqueue(new Callback<User>() {
-//            @Override
-//            public void onResponse(@NonNull Call<User> call, @NonNull Response<User> response) {
-//                if (response.code() == 200) {
-//                    assert response.body() != null;
-//                    for (Long recipeId : response.body().getFavorites()) {
-//                        retrofitManager.searchRecipeById(recipeId, new OnRecipeByIdApiListener() {
-//                                    @Override
-//                                    public void onResponse(DetailedRecipeDto recipe) {
-//                                        favoriteMovies.add(new RecipeDto(recipe.getId(), recipe.getTitle(), recipe.getImageUrl()));
-//                                        adapter = new RecipesAdapter(FavoritesActivity.this, favoriteMovies);
-//                                        recipesListView.setAdapter(adapter);
-//                                    }
-//                                }
-//                        );
-//                    }
-//                    adapter = new RecipesAdapter(FavoritesActivity.this, favoriteMovies);
-//                    recipesListView.setAdapter(adapter);
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<User> call, Throwable t) {
-//                Log.i("DEBUG", call.toString());
-//                Log.i("DEBUG", t.getMessage());
-//            }
-//        });
+
         ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
