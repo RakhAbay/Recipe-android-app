@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    android:paddingTop="30dp"
+    android:id="@+id/itemList">
+
+    <ImageView
+        android:id="@+id/imageItem"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        tools:src="@drawable/img" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="false"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/imageItem"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_margin="8dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:id="@+id/title"
+            tools:text="Title"
+            android:fontFamily="@font/lato"
+            android:textSize="30dp"
+            android:gravity="center_vertical"
+            />
+
+
+        <TextView
+            android:id="@+id/rating"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/lato"
+            android:gravity="center_vertical"
+            android:textColor="@color/white"
+            android:textStyle="italic"
+            tools:text="9.4" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#1d0303"/>
+    </LinearLayout>
+
+</RelativeLayout>
