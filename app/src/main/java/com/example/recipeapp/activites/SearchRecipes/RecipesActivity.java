@@ -16,7 +16,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.recipeapp.Auth.LoginActivity;
+import com.example.recipeapp.activites.Auth.LoginActivity;
 import com.example.recipeapp.RecipeDetails.RecipeDetailsActivity;
 import com.example.recipeapp.R;
 import com.example.recipeapp.UserProfile.UserProfile;
@@ -153,12 +153,38 @@ public class RecipesActivity extends AppCompatActivity
     }
 
     @Override
+    protected void onStart() { // TODO: infuse the lifecycle methods with functional code
+        super.onStart();
+    }
+
+    @Override
     protected void onResume() {
         super.onResume();
         searchTextView.clearFocus();
         if (ListState != null)
             recipesListView.onRestoreInstanceState(ListState);
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
 
     @Override
     protected void onSaveInstanceState(Bundle state) {
