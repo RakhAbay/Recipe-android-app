@@ -35,7 +35,6 @@ import java.util.List;
 public class FavoritesActivity extends AppCompatActivity {
 
     private static final String LIST_STATE = "listState2";
-    public static final String BASE_URL = "http://10.0.2.2:8080/api/user/";
 
     private RetrofitManager retrofitManager;
 
@@ -46,8 +45,6 @@ public class FavoritesActivity extends AppCompatActivity {
     private Button profileIntentButton;
 
     List<RecipeDto> favoriteMovies;
-//    Retrofit retrofit;
-//    UserJsonDataApi userJsonDataApi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -151,11 +148,9 @@ public class FavoritesActivity extends AppCompatActivity {
 
     }
 
-
     @Override
-    protected void onRestoreInstanceState(Bundle state) {
-        super.onRestoreInstanceState(state);
-        ListState = state.getParcelable(LIST_STATE);
+    protected void onStart() { // TODO: infuse the lifecycle methods with functional code
+        super.onStart();
     }
 
     @Override
@@ -163,6 +158,32 @@ public class FavoritesActivity extends AppCompatActivity {
         super.onResume();
         if (ListState != null)
             recipesListView.onRestoreInstanceState(ListState);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle state) {
+        super.onRestoreInstanceState(state);
+        ListState = state.getParcelable(LIST_STATE);
     }
 
     @Override

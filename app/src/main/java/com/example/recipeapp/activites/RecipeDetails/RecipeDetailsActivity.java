@@ -94,6 +94,36 @@ public class RecipeDetailsActivity extends AppCompatActivity  {
         });
     }
 
+    @Override
+    protected void onStart() { // TODO: infuse the lifecycle methods with functional code
+        super.onStart();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
     public void moviesIntent(View view) {
         Intent intent = new Intent(getApplicationContext(), RecipesActivity.class);
         Intent myIntent = getIntent();

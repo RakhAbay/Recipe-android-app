@@ -153,12 +153,38 @@ public class RecipesActivity extends AppCompatActivity
     }
 
     @Override
+    protected void onStart() { // TODO: infuse the lifecycle methods with functional code
+        super.onStart();
+    }
+
+    @Override
     protected void onResume() {
         super.onResume();
         searchTextView.clearFocus();
         if (ListState != null)
             recipesListView.onRestoreInstanceState(ListState);
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
 
     @Override
     protected void onSaveInstanceState(Bundle state) {
