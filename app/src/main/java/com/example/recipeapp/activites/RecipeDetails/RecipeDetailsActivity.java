@@ -1,4 +1,4 @@
-package com.example.recipeapp.RecipeDetails;
+package com.example.recipeapp.activites.RecipeDetails;
 
 
 import android.content.Intent;
@@ -12,7 +12,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.recipeapp.activites.Auth.LoginActivity;
-import com.example.recipeapp.SearchRecipes.RecipesActivity;
+import com.example.recipeapp.activites.SearchRecipes.RecipesActivity;
 import com.example.recipeapp.R;
 import com.example.recipeapp.dto.DetailedRecipeDto;
 import com.example.recipeapp.entities.LoggedInUser;

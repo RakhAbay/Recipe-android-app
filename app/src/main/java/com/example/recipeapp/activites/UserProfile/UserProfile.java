@@ -1,4 +1,4 @@
-package com.example.recipeapp.UserProfile;
+package com.example.recipeapp.activites.UserProfile;
 
 
 import android.content.Intent;
@@ -9,8 +9,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.recipeapp.Favorites.FavoritesActivity;
-import com.example.recipeapp.SearchRecipes.RecipesActivity;
+import com.example.recipeapp.activites.Favorites.FavoritesActivity;
+import com.example.recipeapp.activites.SearchRecipes.RecipesActivity;
 import com.example.recipeapp.R;
 import com.example.recipeapp.entities.LoggedInUser;
 

@@ -1,4 +1,4 @@
-package com.example.recipeapp.Auth;
+package com.example.recipeapp.activites.Auth;
 
 
 import android.content.Intent;
@@ -9,9 +9,8 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.recipeapp.SearchRecipes.RecipesActivity;
+import com.example.recipeapp.activites.SearchRecipes.RecipesActivity;
 import com.example.recipeapp.R;
-import com.example.recipeapp.UserProfile.UserProfile;
 import com.example.recipeapp.entities.LoggedInUser;
 import com.example.recipeapp.utils.RetrofitManager;
 
@@ -55,6 +54,36 @@ public class LoginActivity extends AppCompatActivity {
             Intent intent = new Intent(this, RecipesActivity.class);
             startActivity(intent);
         });
+    }
+
+    @Override
+    protected void onStart() { // TODO: infuse the lifecycle methods with functional code
+        super.onStart();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 
     public void registerIntent(View view) {

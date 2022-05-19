@@ -7,7 +7,7 @@
     android:background="@drawable/main_background"
     android:orientation="vertical"
     android:padding="15dp"
-    tools:context=".UserProfile.UserProfile">
+    tools:context=".activites.UserProfile.UserProfile">
 
 
         <LinearLayout

@@ -1,4 +1,4 @@
-package com.example.recipeapp.SearchRecipes;
+package com.example.recipeapp.activites.SearchRecipes;
 
 import android.app.Activity;
 import android.view.LayoutInflater;

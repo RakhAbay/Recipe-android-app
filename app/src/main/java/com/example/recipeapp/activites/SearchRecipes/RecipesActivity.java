@@ -1,4 +1,4 @@
-package com.example.recipeapp.SearchRecipes;
+package com.example.recipeapp.activites.SearchRecipes;
 
 
 import android.content.Context;
@@ -17,9 +17,9 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.recipeapp.activites.Auth.LoginActivity;
-import com.example.recipeapp.RecipeDetails.RecipeDetailsActivity;
+import com.example.recipeapp.activites.RecipeDetails.RecipeDetailsActivity;
 import com.example.recipeapp.R;
-import com.example.recipeapp.UserProfile.UserProfile;
+import com.example.recipeapp.activites.UserProfile.UserProfile;
 import com.example.recipeapp.dto.RecipeDto;
 import com.example.recipeapp.entities.LoggedInUser;
 import com.example.recipeapp.listeners.OnRecipeSearchApiListener;

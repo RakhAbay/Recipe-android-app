@@ -1,4 +1,4 @@
-package com.example.recipeapp.Auth;
+package com.example.recipeapp.activites.Auth;
 
 
 import android.content.Intent;
@@ -45,7 +45,7 @@ public class RegistrationActivity extends AppCompatActivity {
     }
 
     public void loginIntent(View view) {
-        Intent intent = new Intent(this, com.example.recipeapp.Auth.LoginActivity.class);
+        Intent intent = new Intent(this, com.example.recipeapp.activites.Auth.LoginActivity.class);
         startActivity(intent);
     }
 
