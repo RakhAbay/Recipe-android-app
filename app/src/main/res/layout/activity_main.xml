@@ -4,91 +4,104 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activites.SearchRecipes.RecipesActivity"
-    >
+    android:background="@drawable/main_background"
+    tools:context=".activites.SearchRecipes.RecipesActivity">
+
+    <TextView
+        android:id="@+id/main_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text="Find Best Recipe \nfor cooking"
+        android:textColor="@color/black"
+
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <RelativeLayout
+        android:id="@+id/search_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:id="@+id/mainLayout"
-        android:background="@drawable/main_background">
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_text">
 
-        <LinearLayout
-            android:paddingTop="10dp"
+        <SearchView
+            android:id="@+id/search_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:id="@+id/layout_search">
+            android:background="@drawable/background_rounded" />
+    </RelativeLayout>
 
-            <SearchView
-                android:id="@+id/search_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:background="@drawable/background_rounded"
-                android:focusable="false"
-                android:iconifiedByDefault="false"
-                android:queryHint="Search"
-                android:textColorHint="@color/white" />
+    <HorizontalScrollView
+        android:id="@+id/button_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_layout">
 
-<!--            <Button-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:onClick="loginIntent"-->
-<!--                android:text="Login" />-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
             <androidx.appcompat.widget.AppCompatButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-               android:layout_gravity="center"
-                android:layout_marginTop="15dp"
-                android:id="@+id/search_button"
+                android:layout_marginEnd="15dp"
                 android:background="@drawable/button"
-                android:textColor="#4a4a4a"
-                android:text="Find"/>
+                android:text="All"
+                android:textColor="@color/white" />
 
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:background="@color/white"
+                android:text="Pasta"
+
+                android:textColor="#a3a3a3" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:background="@color/white"
+                android:text="Burger"
+                android:textColor="#a3a3a3" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:background="@color/white"
+                android:text="Beef"
+                android:textColor="#a3a3a3" />
         </LinearLayout>
+    </HorizontalScrollView>
 
-        <ListView
-            android:id="@+id/list"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/layout_search" />
-
-        <!-- Empty view is only visible when the list has no items. -->
-        <TextView
-            android:id="@+id/empty_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:textAppearance="?android:textAppearanceMedium"/>
-
-        <!-- Loading indicator shown before the books data is loaded. -->
-<!--        <ProgressBar-->
-<!--            android:id="@+id/loading_indicator"-->
-<!--            style="@style/Widget.AppCompat.ProgressBar"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_centerInParent="true"/>-->
-
-        <TextView
-            android:id="@+id/movies_username"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true" />
-
-        <Button
-            android:id="@+id/to_profile_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Profile"
-            android:layout_alignParentBottom="true"/>
-        <Button
-            android:id="@+id/to_login_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Login"
-            android:layout_alignParentBottom="true"/>
-    </RelativeLayout>
-
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        app:layout_constraintTop_toBottomOf="@+id/button_group" />
+    <Button
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/to_profile_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Profile"
+        android:layout_alignParentBottom="true"/>
+    <Button
+        android:id="@+id/to_login_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:layout_alignParentBottom="true"
+        app:layout_constraintBottom_toTopOf="@+id/to_profile_button"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

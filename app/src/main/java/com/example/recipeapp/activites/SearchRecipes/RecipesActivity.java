@@ -58,7 +58,7 @@ public class RecipesActivity extends AppCompatActivity
 
 
         recipesListView = findViewById(R.id.list);
-        searchTextView = findViewById(R.id.search_text);
+        searchTextView = findViewById(R.id.search_bar);
         EmptyStateTextView = findViewById(R.id.empty_view);
         recipesListView.setEmptyView(EmptyStateTextView);
 
