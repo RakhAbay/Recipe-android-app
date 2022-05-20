@@ -12,6 +12,7 @@ public class DetailedRecipeDto {
     @SerializedName("image")
     private String imageUrl;
     private String instructions;
+    private String summary;
 
     public Long getId() {
         return id;
@@ -27,6 +28,14 @@ public class DetailedRecipeDto {
 
     public String getInstructions() {
         return instructions;
+    }
+
+    public String getSummary() {
+        return summary;
+    }
+
+    public void setSummary(String summary) {
+        this.summary = summary;
     }
 
     public void setId(Long id) {

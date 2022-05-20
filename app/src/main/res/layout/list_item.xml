@@ -5,7 +5,8 @@
     android:id="@+id/itemList"
     android:layout_width="match_parent"
     android:layout_height="450dp"
-    android:layout_margin="15dp">
+    android:layout_margin="15dp"
+    android:layout_marginBottom="30dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"

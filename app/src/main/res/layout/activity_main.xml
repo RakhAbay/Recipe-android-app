@@ -31,7 +31,10 @@
 
         <SearchView
             android:id="@+id/search_bar"
+            android:focusable="false"
+            android:iconifiedByDefault="false"
             android:layout_width="match_parent"
+            android:queryHint="Search..."
             android:layout_height="wrap_content"
             android:background="@drawable/background_rounded" />
     </RelativeLayout>
@@ -86,6 +89,8 @@
 
     <ListView
         android:id="@+id/list"
+        android:dividerHeight="10dp"
+        android:divider="@android:color/transparent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"

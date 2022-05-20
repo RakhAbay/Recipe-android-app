@@ -26,7 +26,8 @@ public class RecipeDetailsActivity extends AppCompatActivity  {
     private TextView titleTextView;
     private ImageView imageView;
     private Button add_fav;
-    private TextView overviewTextView;
+    private TextView instructionsTextView;
+    private TextView summaryTextView;
 
 
     @Override
@@ -40,7 +41,8 @@ public class RecipeDetailsActivity extends AppCompatActivity  {
         titleTextView = findViewById(R.id.detailTitle);
         imageView = findViewById(R.id.detailImageItem);
         add_fav = findViewById(R.id.add_btn_favorities);
-        overviewTextView = findViewById(R.id.overview);
+        instructionsTextView = findViewById(R.id.instructions);
+        summaryTextView = findViewById(R.id.summary);
 
 
         /**
@@ -68,9 +70,20 @@ public class RecipeDetailsActivity extends AppCompatActivity  {
                                     .replaceAll("</li>", "")
                                     .replaceAll("<b>", "")
                                     .replaceAll("</b>", "");
-                            overviewTextView.setText(instructions);
+                            instructionsTextView.setText(instructions);
                         }
-
+                        if (recipe.getSummary() != null) {
+                            String summary = recipe.getSummary().replaceAll("<ol>", "")
+                                    .replaceAll("</ol>", "")
+                                    .replaceAll("<span>", "")
+                                    .replaceAll("</span>", "")
+                                    .replaceAll("\"", "")
+                                    .replaceAll("<li>", "")
+                                    .replaceAll("</li>", "")
+                                    .replaceAll("<b>", "")
+                                    .replaceAll("</b>", "");
+                            summaryTextView.setText(summary);
+                        }
                     }
                 });
 
