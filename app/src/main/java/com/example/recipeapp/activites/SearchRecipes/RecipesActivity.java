@@ -92,7 +92,7 @@ public class RecipesActivity extends AppCompatActivity
                 }
         );
 
-        Button searchButton = findViewById(R.id.search_button);
+        //Button searchButton = findViewById(R.id.search_button);
 
         recipesListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -106,22 +106,22 @@ public class RecipesActivity extends AppCompatActivity
             }
         });
 
-        searchButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                EmptyStateTextView.setText(null);
-                retrofitManager.searchRecipes(searchTextView.getQuery().toString(),
-                        new OnRecipeSearchApiListener() {
-                            @Override
-                            public void onResponse(List<RecipeDto> recipes) {
-                                adapter = new RecipesAdapter(RecipesActivity.this, recipes);
-                                recipesListView.setAdapter(adapter);
-                            }
-                        }
-                );
-                searchTextView.clearFocus();
-            }
-        });
+//        searchButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                EmptyStateTextView.setText(null);
+//                retrofitManager.searchRecipes(searchTextView.getQuery().toString(),
+//                        new OnRecipeSearchApiListener() {
+//                            @Override
+//                            public void onResponse(List<RecipeDto> recipes) {
+//                                adapter = new RecipesAdapter(RecipesActivity.this, recipes);
+//                                recipesListView.setAdapter(adapter);
+//                            }
+//                        }
+//                );
+//                searchTextView.clearFocus();
+//            }
+//        });
 
         ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
 
