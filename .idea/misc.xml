@@ -3,9 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Azhar/Desktop/Recipe-android-app/app/src/main/res/layout/activity_login.xml" value="0.1" />
-        <entry key="..\:/Users/Azhar/Desktop/Recipe-android-app/app/src/main/res/layout/activity_main.xml" value="0.8" />
-        <entry key="..\:/Users/Azhar/Desktop/Recipe-android-app/app/src/main/res/layout/list_item.xml" value="0.1" />
+        <entry key="..\:/Users/Azhar/Desktop/Recipe-android-app/app/src/main/res/drawable/main_background.xml" value="0.1" />
+        <entry key="..\:/Users/Azhar/Desktop/Recipe-android-app/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Users/Azhar/Desktop/Recipe-android-app/app/src/main/res/layout/activity_main.xml" value="0.152" />
+        <entry key="..\:/Users/Azhar/Desktop/Recipe-android-app/app/src/main/res/layout/activity_movie_details.xml" value="0.264" />
+        <entry key="..\:/Users/Azhar/Desktop/Recipe-android-app/app/src/main/res/layout/activity_registration.xml" value="0.2" />
+        <entry key="..\:/Users/Azhar/Desktop/Recipe-android-app/app/src/main/res/layout/list_item.xml" value="0.264" />
         <entry key="..\:/Users/Rakhman/AndroidStudioProjects/Recipeapp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.13518518518518519" />
         <entry key="..\:/Users/Rakhman/AndroidStudioProjects/Recipeapp/app/src/main/res/font/lato.xml" value="0.13518518518518519" />
         <entry key="..\:/Users/Rakhman/AndroidStudioProjects/Recipeapp/app/src/main/res/layout/activity_favorites.xml" value="0.1" />

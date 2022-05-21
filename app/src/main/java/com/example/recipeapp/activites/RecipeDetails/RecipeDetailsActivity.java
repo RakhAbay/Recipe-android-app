@@ -39,9 +39,9 @@ public class RecipeDetailsActivity extends AppCompatActivity  {
         RetrofitManager retrofitManager = new RetrofitManager(this);
 
         titleTextView = findViewById(R.id.detailTitle);
-        imageView = findViewById(R.id.detailImageItem);
+        imageView = findViewById(R.id.imageItem);
         add_fav = findViewById(R.id.add_btn_favorities);
-        instructionsTextView = findViewById(R.id.instructions);
+        instructionsTextView = findViewById(R.id.overview);
         summaryTextView = findViewById(R.id.summary);
 
 
@@ -137,7 +137,7 @@ public class RecipeDetailsActivity extends AppCompatActivity  {
         super.onDestroy();
     }
 
-    public void moviesIntent(View view) {
+    public void recipesIntent(View view) {
         Intent intent = new Intent(getApplicationContext(), RecipesActivity.class);
         Intent myIntent = getIntent();
         if (!(myIntent.getStringExtra("username") == null)) {
