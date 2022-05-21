@@ -8,10 +8,20 @@ import android.os.SystemClock;
 import android.widget.RemoteViews;
 import android.widget.RemoteViewsService;
 
+import com.example.recipeapp.dto.RecipeDto;
+import com.example.recipeapp.dto.RecipesSearchResultsDto;
+import com.example.recipeapp.listeners.OnRecipeSearchApiListener;
+import com.example.recipeapp.utils.RetrofitManager;
+
 import java.text.DateFormat;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
+import java.util.List;
 
 public class WidgetService extends RemoteViewsService {
+    RetrofitManager retrofitManager;
+
     @Override
     public RemoteViewsFactory onGetViewFactory(Intent intent) {
         return new ExampleWidgetItemFactory(getApplicationContext(), intent);
@@ -20,8 +30,8 @@ public class WidgetService extends RemoteViewsService {
     class ExampleWidgetItemFactory implements RemoteViewsFactory {
         private Context context;
         private int appWidgetId;
-        private String[] exampleData = {"one", "two", "three", "four",
-                "five", "six", "seven", "eight", "nine", "ten"};
+        private List<RecipeDto> exampleData = new ArrayList<>(Collections.nCopies(5, new RecipeDto(0L, "", "")));
+
 
         ExampleWidgetItemFactory(Context context, Intent intent) {
             this.context = context;
@@ -32,17 +42,34 @@ public class WidgetService extends RemoteViewsService {
         @Override
         public void onCreate() {
             //connect to data source
-            SystemClock.sleep(3000);
+            retrofitManager = new RetrofitManager(getApplicationContext());
+            retrofitManager.searchRecipes("", new OnRecipeSearchApiListener() {
+                @Override
+                public void onResponse(List<RecipeDto> recipes) {
+                    for (int i = 0; i < 5; i++) {
+                        exampleData.set(i, recipes.get(i));
+                    }
+                }
+            });
         }
 
         @Override
         public void onDataSetChanged() {
             //refresh data
-            Date date = new Date();
-            String timeFormatted = DateFormat.getTimeInstance(DateFormat.SHORT).format(date);
-            exampleData = new String[]{"one\n" + timeFormatted, "two\n" + timeFormatted,
-                    "three\n" + timeFormatted};
-            SystemClock.sleep(3000);
+//            Date date = new Date();
+//            String timeFormatted = DateFormat.getTimeInstance(DateFormat.SHORT).format(date);
+//            exampleData = new String[]{"one\n" + timeFormatted, "two\n" + timeFormatted,
+//                    "three\n" + timeFormatted};
+//            SystemClock.sleep(3000);
+            retrofitManager = new RetrofitManager(getApplicationContext());
+            retrofitManager.searchRecipes("", new OnRecipeSearchApiListener() {
+                @Override
+                public void onResponse(List<RecipeDto> recipes) {
+                    for (int i = 0; i < 5; i++) {
+                        exampleData.set(i, recipes.get(i));
+                    }
+                }
+            });
         }
 
         @Override
@@ -52,13 +79,13 @@ public class WidgetService extends RemoteViewsService {
 
         @Override
         public int getCount() {
-            return exampleData.length;
+            return exampleData.size();
         }
 
         @Override
         public RemoteViews getViewAt(int position) {
             RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget_item);
-            views.setTextViewText(R.id.widget_item_text, exampleData[position]);
+            views.setTextViewText(R.id.widget_item_text, exampleData.get(position).getTitle());
 
             Intent fillIntent = new Intent();
             fillIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);

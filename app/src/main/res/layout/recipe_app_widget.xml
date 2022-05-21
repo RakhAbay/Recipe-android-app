@@ -11,14 +11,8 @@
         android:id="@+id/widget_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="My Widget"
+        android:text="5 recipes of the day"
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-    <Button
-        android:id="@+id/widget_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Press me" />
 
     <FrameLayout
         android:layout_width="match_parent"

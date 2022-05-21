@@ -15,11 +15,11 @@
         android:background="@drawable/main_background">
 
         <LinearLayout
-            android:paddingTop="10dp"
+            android:id="@+id/layout_search"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:id="@+id/layout_search">
+            android:paddingTop="10dp">
 
             <SearchView
                 android:id="@+id/search_text"
@@ -32,20 +32,20 @@
                 android:queryHint="Search"
                 android:textColorHint="@color/white" />
 
-<!--            <Button-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:onClick="loginIntent"-->
-<!--                android:text="Login" />-->
+            <!--            <Button-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:onClick="loginIntent"-->
+            <!--                android:text="Login" />-->
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/search_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-               android:layout_gravity="center"
+                android:layout_gravity="center"
                 android:layout_marginTop="15dp"
-                android:id="@+id/search_button"
                 android:background="@drawable/button"
-                android:textColor="#4a4a4a"
-                android:text="Find"/>
+                android:text="Find"
+                android:textColor="#4a4a4a" />
 
         </LinearLayout>
 

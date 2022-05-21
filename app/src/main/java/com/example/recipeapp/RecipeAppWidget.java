@@ -1,6 +1,5 @@
 package com.example.recipeapp;
 
-import static com.example.recipeapp.WidgetConfig.KEY_BUTTON_TEXT;
 import static com.example.recipeapp.WidgetConfig.SHARED_PREFS;
 
 import android.app.PendingIntent;
@@ -31,7 +30,7 @@ public class RecipeAppWidget extends AppWidgetProvider {
             PendingIntent buttonPendingIntent = PendingIntent.getActivity(context, 0, buttonIntent, 0);
 
             SharedPreferences prefs = context.getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
-            String buttonText = prefs.getString(KEY_BUTTON_TEXT + appWidgetId, "Press me");
+            //String buttonText = prefs.getString(KEY_BUTTON_TEXT + appWidgetId, "Press me");
 
             Intent serviceIntent = new Intent(context, WidgetService.class);
             serviceIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
@@ -43,8 +42,8 @@ public class RecipeAppWidget extends AppWidgetProvider {
                     0, clickIntent, 0);
 
             RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.recipe_app_widget);
-            views.setOnClickPendingIntent(R.id.widget_button, buttonPendingIntent);
-            views.setCharSequence(R.id.widget_button, "setText", buttonText);
+//            views.setOnClickPendingIntent(R.id.widget_button, buttonPendingIntent);
+//            views.setCharSequence(R.id.widget_button, "setText", buttonText);
             views.setRemoteAdapter(R.id.widget_stack_view, serviceIntent);
             views.setEmptyView(R.id.widget_stack_view, R.id.widget_empty_view);
             views.setPendingIntentTemplate(R.id.widget_stack_view, clickPendingIntent);
@@ -74,10 +73,8 @@ public class RecipeAppWidget extends AppWidgetProvider {
 
         if (maxHeight > 100) {
             views.setViewVisibility(R.id.widget_text, View.VISIBLE);
-            views.setViewVisibility(R.id.widget_button, View.VISIBLE);
         } else {
             views.setViewVisibility(R.id.widget_text, View.GONE);
-            views.setViewVisibility(R.id.widget_button, View.GONE);
         }
     }
 

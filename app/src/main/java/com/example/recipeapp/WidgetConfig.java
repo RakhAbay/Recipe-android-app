@@ -50,8 +50,9 @@ public class WidgetConfig extends AppCompatActivity {
         AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(this);
 
         Intent buttonIntent = new Intent(this, RecipeDetailsActivity.class);
-        buttonIntent.putExtra("recipeId", (long)716426);
-        PendingIntent buttonPendingIntent = PendingIntent.getActivity(this, 0, buttonIntent, 0);
+
+//        buttonIntent.putExtra("recipeId", (long)716426);
+//        PendingIntent buttonPendingIntent = PendingIntent.getActivity(this, 0, buttonIntent, 0);
 
         String buttonText = editTextButton.getText().toString();
 
@@ -65,8 +66,8 @@ public class WidgetConfig extends AppCompatActivity {
                 0, clickIntent, 0);
 
         RemoteViews views = new RemoteViews(this.getPackageName(), R.layout.recipe_app_widget);
-        views.setOnClickPendingIntent(R.id.widget_button, buttonPendingIntent);
-        views.setCharSequence(R.id.widget_button, "setText", buttonText);
+//        views.setOnClickPendingIntent(R.id.widget_button, buttonPendingIntent);
+//        views.setCharSequence(R.id.widget_button, "setText", buttonText);
         views.setRemoteAdapter(R.id.widget_stack_view, serviceIntent);
         views.setEmptyView(R.id.widget_stack_view, R.id.widget_empty_view);
         views.setPendingIntentTemplate(R.id.widget_stack_view, clickPendingIntent);
