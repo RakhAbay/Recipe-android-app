@@ -5,13 +5,23 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground"
-    >
+    android:background="@color/colorBackground">
+
 
     <LinearLayout
 
         android:layout_width="match_parent"
         android:layout_height="150dp">
+
+        <!--        <TextView-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            android:layout_weight="1"-->
+        <!--            android:fontFamily="@font/limelight"-->
+        <!--            android:gravity="center"-->
+        <!--            android:text="Movie Guide"-->
+        <!--            android:textColor="@color/white"-->
+        <!--            android:textSize="45sp" />-->
 
         <ImageView
 
@@ -31,39 +41,22 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
+            android:layout_height="match_parent">
 
 
-            <Switch
-                android:id="@+id/mode2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_marginTop="6dp"
-                android:layout_marginEnd="96dp"
-                android:layout_marginBottom="6dp"
-                app:layout_constraintBottom_toTopOf="@+id/textView"
-
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="UseSwitchCompatOrMaterialXml" />
 
             <TextView
-                android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/limelight"
                 android:padding="15dp"
                 android:text="Login"
-                android:textColor="@color/login"
+                android:textColor="@color/black"
                 android:textSize="45sp"
                 app:layout_constraintBottom_toTopOf="@+id/login_username"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
 
             <EditText
                 android:id="@+id/login_username"
@@ -74,8 +67,8 @@
                 android:paddingLeft="20dp"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
-                android:textColor="@color/mainText"
-                android:textColorHint="@color/hintText"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -84,7 +77,6 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias=".3"
                 app:layout_constraintWidth_percent=".8" />
-
 
 
             <EditText
@@ -97,13 +89,14 @@
                 android:paddingLeft="20dp"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
-                android:textColor="@color/mainText"
-                android:textColorHint="@color/hintText"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias=".5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/login_username"
-                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintVertical_bias="0"
                 app:layout_constraintWidth_percent=".8" />
 
 
@@ -115,8 +108,7 @@
                 android:text="@string/do_not_have_account_yet"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/sign_in"
-                android:textColor="@color/secondaryText"/>
+                app:layout_constraintTop_toBottomOf="@+id/sign_in" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/sign_in"
