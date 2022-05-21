@@ -5,9 +5,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.Switch;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import com.example.recipeapp.activites.SearchRecipes.RecipesActivity;
 import com.example.recipeapp.R;
@@ -19,10 +23,38 @@ public class LoginActivity extends AppCompatActivity {
 
     RetrofitManager retrofitManager;
 
+    private Switch aSwitch;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+            setTheme(R.style.DarkTheme_RecipeApp);
+        }else{
+            setTheme(R.style.Theme_RecipeApp);
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        aSwitch = findViewById(R.id.mode);
+
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+            aSwitch.setChecked(true);
+        }
+
+        aSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(b){
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                    reset();
+                }else{
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                    reset();
+                }
+            }
+        });
 
         retrofitManager = new RetrofitManager(this);
 
@@ -54,6 +86,13 @@ public class LoginActivity extends AppCompatActivity {
             Intent intent = new Intent(this, RecipesActivity.class);
             startActivity(intent);
         });
+    }
+
+    private void reset() {
+
+        Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     @Override
