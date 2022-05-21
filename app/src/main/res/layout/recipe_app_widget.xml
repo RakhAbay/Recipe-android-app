@@ -1,8 +1,21 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     style="@style/Widget.RecipeApp.AppWidget.Container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:theme="@style/Theme.RecipeApp.AppWidgetContainer">
+
+    <TextView
+        android:id="@+id/widget_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/widget_button"
+        android:layout_centerHorizontal="true"
+        android:text="My Widget"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
     <Button
         android:id="@+id/widget_button"
         android:layout_width="wrap_content"
