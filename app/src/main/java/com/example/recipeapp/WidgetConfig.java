@@ -1,9 +1,12 @@
 package com.example.recipeapp;
 
+import static com.example.recipeapp.RecipeAppWidget.ACTION_TOAST;
+
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -46,15 +49,27 @@ public class WidgetConfig extends AppCompatActivity {
     public void confirmConfiguration(View v) {
         AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(this);
 
-        Intent intent = new Intent(this, RecipeDetailsActivity.class);
-        intent.putExtra("recipeId", (long)716426);
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
+        Intent buttonIntent = new Intent(this, RecipeDetailsActivity.class);
+        buttonIntent.putExtra("recipeId", (long)716426);
+        PendingIntent buttonPendingIntent = PendingIntent.getActivity(this, 0, buttonIntent, 0);
 
         String buttonText = editTextButton.getText().toString();
 
+        Intent serviceIntent = new Intent(this, WidgetService.class);
+        serviceIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
+        serviceIntent.setData(Uri.parse(serviceIntent.toUri(Intent.URI_INTENT_SCHEME)));
+
+        Intent clickIntent = new Intent(this, RecipeAppWidget.class);
+        clickIntent.setAction(ACTION_TOAST);
+        PendingIntent clickPendingIntent = PendingIntent.getBroadcast(this,
+                0, clickIntent, 0);
+
         RemoteViews views = new RemoteViews(this.getPackageName(), R.layout.recipe_app_widget);
-        views.setOnClickPendingIntent(R.id.widget_button, pendingIntent);
+        views.setOnClickPendingIntent(R.id.widget_button, buttonPendingIntent);
         views.setCharSequence(R.id.widget_button, "setText", buttonText);
+        views.setRemoteAdapter(R.id.widget_stack_view, serviceIntent);
+        views.setEmptyView(R.id.widget_stack_view, R.id.widget_empty_view);
+        views.setPendingIntentTemplate(R.id.widget_stack_view, clickPendingIntent);
 
         appWidgetManager.updateAppWidget(appWidgetId, views);
 

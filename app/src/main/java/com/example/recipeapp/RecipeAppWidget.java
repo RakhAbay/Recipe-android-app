@@ -9,6 +9,7 @@ import android.appwidget.AppWidgetProvider;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RemoteViews;
@@ -21,19 +22,34 @@ import com.example.recipeapp.activites.RecipeDetails.RecipeDetailsActivity;
  * Implementation of App Widget functionality.
  */
 public class RecipeAppWidget extends AppWidgetProvider {
+    public static final String ACTION_TOAST = "actionToast";
+    public static final String EXTRA_ITEM_POSITION = "extraItemPosition";
+
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         for (int appWidgetId : appWidgetIds) {
-            Intent intent = new Intent(context, RecipeDetailsActivity.class);
-            intent.putExtra("recipeId", (long)716426);
-            PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
+            Intent buttonIntent = new Intent(context, RecipeDetailsActivity.class);
+            buttonIntent.putExtra("recipeId", (long)716426);
+            PendingIntent buttonPendingIntent = PendingIntent.getActivity(context, 0, buttonIntent, 0);
 
             SharedPreferences prefs = context.getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
             String buttonText = prefs.getString(KEY_BUTTON_TEXT + appWidgetId, "Press me");
 
+            Intent serviceIntent = new Intent(context, WidgetService.class);
+            serviceIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
+            serviceIntent.setData(Uri.parse(serviceIntent.toUri(Intent.URI_INTENT_SCHEME)));
+
+            Intent clickIntent = new Intent(context, RecipeAppWidget.class);
+            clickIntent.setAction(ACTION_TOAST);
+            PendingIntent clickPendingIntent = PendingIntent.getBroadcast(context,
+                    0, clickIntent, 0);
+
             RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.recipe_app_widget);
-            views.setOnClickPendingIntent(R.id.widget_button, pendingIntent);
+            views.setOnClickPendingIntent(R.id.widget_button, buttonPendingIntent);
             views.setCharSequence(R.id.widget_button, "setText", buttonText);
+            views.setRemoteAdapter(R.id.widget_stack_view, serviceIntent);
+            views.setEmptyView(R.id.widget_stack_view, R.id.widget_empty_view);
+            views.setPendingIntentTemplate(R.id.widget_stack_view, clickPendingIntent);
 
             Bundle appWidgetOptions = appWidgetManager.getAppWidgetOptions(appWidgetId);
             resizeWidget(appWidgetOptions, views);
@@ -59,8 +75,10 @@ public class RecipeAppWidget extends AppWidgetProvider {
 
         if (maxHeight > 100) {
             views.setViewVisibility(R.id.widget_text, View.VISIBLE);
+            views.setViewVisibility(R.id.widget_button, View.VISIBLE);
         } else {
             views.setViewVisibility(R.id.widget_text, View.GONE);
+            views.setViewVisibility(R.id.widget_button, View.GONE);
         }
     }
 
@@ -77,5 +95,14 @@ public class RecipeAppWidget extends AppWidgetProvider {
     @Override
     public void onDisabled(Context context) {
         Toast.makeText(context, "onDisabled", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        if (ACTION_TOAST.equals(intent.getAction())) {
+            int clickedPosition = intent.getIntExtra(EXTRA_ITEM_POSITION, 0);
+            Toast.makeText(context, "Clicked position: " + clickedPosition, Toast.LENGTH_SHORT).show();
+        }
+        super.onReceive(context, intent);
     }
 }

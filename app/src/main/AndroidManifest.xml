@@ -31,6 +31,10 @@
             </intent-filter>
         </activity>
 
+        <service
+            android:name=".WidgetService"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+
         <activity
             android:name=".activites.UserProfile.UserProfile"
             android:exported="false" />
