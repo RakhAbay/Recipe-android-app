@@ -24,6 +24,13 @@
                 android:resource="@xml/recipe_app_widget_info" />
         </receiver>
 
+        <activity android:name=".WidgetConfig"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+
         <activity
             android:name=".activites.UserProfile.UserProfile"
             android:exported="false" />
