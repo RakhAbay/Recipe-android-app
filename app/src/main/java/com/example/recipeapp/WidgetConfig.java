@@ -1,6 +1,6 @@
 package com.example.recipeapp;
 
-import static com.example.recipeapp.RecipeAppWidget.ACTION_TOAST;
+import static com.example.recipeapp.RecipeAppWidget.ACTION_REFRESH;
 
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
@@ -60,7 +60,7 @@ public class WidgetConfig extends AppCompatActivity {
         serviceIntent.setData(Uri.parse(serviceIntent.toUri(Intent.URI_INTENT_SCHEME)));
 
         Intent clickIntent = new Intent(this, RecipeAppWidget.class);
-        clickIntent.setAction(ACTION_TOAST);
+        clickIntent.setAction(ACTION_REFRESH);
         PendingIntent clickPendingIntent = PendingIntent.getBroadcast(this,
                 0, clickIntent, 0);
 

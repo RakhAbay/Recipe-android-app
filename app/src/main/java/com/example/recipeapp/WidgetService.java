@@ -1,6 +1,5 @@
 package com.example.recipeapp;
 
-import static com.example.recipeapp.RecipeAppWidget.EXTRA_ITEM_POSITION;
 
 import android.appwidget.AppWidgetManager;
 import android.content.Context;
@@ -8,6 +7,9 @@ import android.content.Intent;
 import android.os.SystemClock;
 import android.widget.RemoteViews;
 import android.widget.RemoteViewsService;
+
+import java.text.DateFormat;
+import java.util.Date;
 
 public class WidgetService extends RemoteViewsService {
     @Override
@@ -35,7 +37,12 @@ public class WidgetService extends RemoteViewsService {
 
         @Override
         public void onDataSetChanged() {
-
+            //refresh data
+            Date date = new Date();
+            String timeFormatted = DateFormat.getTimeInstance(DateFormat.SHORT).format(date);
+            exampleData = new String[]{"one\n" + timeFormatted, "two\n" + timeFormatted,
+                    "three\n" + timeFormatted};
+            SystemClock.sleep(3000);
         }
 
         @Override
@@ -54,7 +61,7 @@ public class WidgetService extends RemoteViewsService {
             views.setTextViewText(R.id.widget_item_text, exampleData[position]);
 
             Intent fillIntent = new Intent();
-            fillIntent.putExtra(EXTRA_ITEM_POSITION, position);
+            fillIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
             views.setOnClickFillInIntent(R.id.widget_item_text, fillIntent);
 
             SystemClock.sleep(500);
