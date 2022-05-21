@@ -2,6 +2,7 @@ package com.example.recipeapp.activites.Auth;
 
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -23,36 +24,41 @@ public class LoginActivity extends AppCompatActivity {
 
     RetrofitManager retrofitManager;
 
-    private Switch aSwitch;
+    private Switch aSwitch2;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
-            setTheme(R.style.DarkTheme_RecipeApp);
-        }else{
-            setTheme(R.style.Theme_RecipeApp);
-        }
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        aSwitch = findViewById(R.id.mode);
+        SharedPreferences appSettingPrefs = getSharedPreferences("AppSettingPrefs", 0);
+        SharedPreferences.Editor sharedPreferencesEdit = appSettingPrefs.edit();
+        Boolean isNightModeOn = appSettingPrefs.getBoolean("NightMode", false);
 
-        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
-            aSwitch.setChecked(true);
+        aSwitch2 = findViewById(R.id.mode2);
+
+        if(isNightModeOn){
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            aSwitch2.setChecked(true);
+        }else{
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         }
 
-        aSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        aSwitch2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if(b){
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                    reset();
+                    sharedPreferencesEdit.putBoolean("NightMode", true);
+                    sharedPreferencesEdit.apply();
                 }else{
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                    reset();
+                    sharedPreferencesEdit.putBoolean("NightMode", false);
+                    sharedPreferencesEdit.apply();
                 }
+
             }
         });
 
@@ -61,7 +67,6 @@ public class LoginActivity extends AppCompatActivity {
         EditText usernameText = findViewById(R.id.login_username);
         EditText passwordText = findViewById(R.id.password);
 
-        //usernameText.setOnClickListener(view -> {});
 
         Button loginButton = findViewById(R.id.sign_in);
         loginButton.setOnClickListener(v -> {
@@ -86,13 +91,6 @@ public class LoginActivity extends AppCompatActivity {
             Intent intent = new Intent(this, RecipesActivity.class);
             startActivity(intent);
         });
-    }
-
-    private void reset() {
-
-        Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-        startActivity(intent);
-        finish();
     }
 
     @Override

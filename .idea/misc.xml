@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Projects/Recipe-android-app/app/src/main/res/drawable-night/background_rounded.xml" value="0.2555" />
+        <entry key="..\:/Projects/Recipe-android-app/app/src/main/res/drawable-night/bg_rounded.xml" value="0.2555" />
+        <entry key="..\:/Projects/Recipe-android-app/app/src/main/res/drawable/background_rounded.xml" value="0.2555" />
+        <entry key="..\:/Projects/Recipe-android-app/app/src/main/res/drawable/bg_rounded.xml" value="0.2555" />
         <entry key="..\:/Projects/Recipe-android-app/app/src/main/res/drawable/button.xml" value="0.2555" />
         <entry key="..\:/Projects/Recipe-android-app/app/src/main/res/layout/activity_login.xml" value="0.358695652173913" />
         <entry key="..\:/Projects/Recipe-android-app/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />

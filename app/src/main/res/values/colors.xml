@@ -16,4 +16,11 @@
     <color name="black">#4a4a4a</color>
     <color name="white">#FFFFFFFF</color>
     <color name="wet_asphalt">#171717</color>
+
+    <color name="mainText">#000000</color>
+    <color name="secondaryText">#4a4a4a</color>
+    <color name="hintText">#4a4a4a</color>
+    <color name="login">#4a4a4a</color>
+    <color name="loginBackground">#FFFFFFFF</color>
+
 </resources>
