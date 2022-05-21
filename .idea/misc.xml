@@ -8,9 +8,13 @@
         <entry key="..\:/Projects/Recipe-android-app/app/src/main/res/drawable/background_rounded.xml" value="0.2555" />
         <entry key="..\:/Projects/Recipe-android-app/app/src/main/res/drawable/bg_rounded.xml" value="0.2555" />
         <entry key="..\:/Projects/Recipe-android-app/app/src/main/res/drawable/button.xml" value="0.2555" />
+        <entry key="..\:/Projects/Recipe-android-app/app/src/main/res/layout/activity_favorites.xml" value="0.35733695652173914" />
         <entry key="..\:/Projects/Recipe-android-app/app/src/main/res/layout/activity_login.xml" value="0.358695652173913" />
         <entry key="..\:/Projects/Recipe-android-app/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
+        <entry key="..\:/Projects/Recipe-android-app/app/src/main/res/layout/activity_movie_details.xml" value="0.35733695652173914" />
         <entry key="..\:/Projects/Recipe-android-app/app/src/main/res/layout/activity_registration.xml" value="0.35733695652173914" />
+        <entry key="..\:/Projects/Recipe-android-app/app/src/main/res/layout/activity_user_profile.xml" value="0.35733695652173914" />
+        <entry key="..\:/Projects/Recipe-android-app/app/src/main/res/layout/list_item.xml" value="0.35733695652173914" />
         <entry key="..\:/Users/Rakhman/AndroidStudioProjects/Recipeapp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.13518518518518519" />
         <entry key="..\:/Users/Rakhman/AndroidStudioProjects/Recipeapp/app/src/main/res/font/lato.xml" value="0.13518518518518519" />
         <entry key="..\:/Users/Rakhman/AndroidStudioProjects/Recipeapp/app/src/main/res/layout/activity_favorites.xml" value="0.1" />

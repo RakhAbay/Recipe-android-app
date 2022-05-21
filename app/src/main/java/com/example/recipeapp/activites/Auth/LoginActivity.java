@@ -23,7 +23,6 @@ import com.example.recipeapp.utils.RetrofitManager;
 public class LoginActivity extends AppCompatActivity {
 
     RetrofitManager retrofitManager;
-
     private Switch aSwitch2;
 
 
@@ -39,6 +38,7 @@ public class LoginActivity extends AppCompatActivity {
 
         aSwitch2 = findViewById(R.id.mode2);
 
+
         if(isNightModeOn){
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
             aSwitch2.setChecked(true);
@@ -48,8 +48,8 @@ public class LoginActivity extends AppCompatActivity {
 
         aSwitch2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if(b){
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if(isChecked){
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
                     sharedPreferencesEdit.putBoolean("NightMode", true);
                     sharedPreferencesEdit.apply();
@@ -92,7 +92,6 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(intent);
         });
     }
-
     @Override
     protected void onStart() { // TODO: infuse the lifecycle methods with functional code
         super.onStart();
@@ -101,6 +100,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+
     }
 
     @Override
