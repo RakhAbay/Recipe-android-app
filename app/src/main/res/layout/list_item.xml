@@ -5,13 +5,12 @@
     android:id="@+id/itemList"
     android:layout_width="match_parent"
     android:layout_height="450dp"
-    android:layout_margin="15dp"
-    android:layout_marginBottom="30dp">
+    android:layout_margin="15dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:cardCornerRadius="50dp">
+        app:cardCornerRadius="30dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -25,7 +24,12 @@
                 android:scaleType="centerCrop"
                 tools:src="@drawable/sushi"
                 android:contentDescription="recipe" />
-
+            <View
+                android:id="@+id/overlay_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#96222f3e"
+            />
             <LinearLayout
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -42,7 +46,7 @@
                     android:text="Salmon Sushi \nMatcha"
                     android:textColor="@color/white"
                     android:fontFamily="@font/lato"
-                    android:textSize="45sp"
+                    android:textSize="35sp"
                     android:textStyle="bold" />
 
                 <LinearLayout

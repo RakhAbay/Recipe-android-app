@@ -1,0 +1,60 @@
+[33mcommit 6935c15f9384a8a6e71da4de054f7560514ccf0f[m[33m ([m[1;36mHEAD -> [m[1;32mui/overhaul[m[33m, [m[1;31morigin/ui/overhaul[m[33m)[m
+Author: Rakhman <iwillshowyou.2017@gmail.com>
+Date:   Fri May 20 21:55:13 2022 +0600
+
+    feat: added summary & added margins in listview
+
+[33mcommit 07e7bcdf5787f822c1c7ac8a9103441b10142207[m
+Author: Rakhman <iwillshowyou.2017@gmail.com>
+Date:   Fri May 20 21:31:40 2022 +0600
+
+    fix: remove unnecessary find button
+
+[33mcommit 8483d2d3e006b226beb6cb006678d372c5fe96a7[m
+Author: Azhar <kazhikarimova@inbox.ru>
+Date:   Fri May 20 21:22:21 2022 +0600
+
+    fix: activity_main ui changed
+
+[33mcommit be8fb7d390f34029bc454cf8c98d3d2788ef7dd1[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: Rakhman <iwillshowyou.2017@gmail.com>
+Date:   Fri May 20 04:47:45 2022 +0600
+
+    remove unnecessary comments and legacy code
+
+[33mcommit 93106c579d205cc7232c6f8aa2b3fb7b7bba88ae[m
+Merge: e2f5f38 18f9753
+Author: Rakhman <iwillshowyou.2017@gmail.com>
+Date:   Fri May 20 04:22:42 2022 +0600
+
+    Merge branch 'feature/lifecycle-methods'
+
+[33mcommit e2f5f385122db56a23e15bbbd155e7389c0c2163[m
+Author: Rakhman <iwillshowyou.2017@gmail.com>
+Date:   Fri May 20 04:22:36 2022 +0600
+
+    fixed package conflict second time
+
+[33mcommit d9ea6647718e8c25a5b1768d4a1f2021bfe9c6f4[m
+Author: Rakhman <iwillshowyou.2017@gmail.com>
+Date:   Fri May 20 04:21:43 2022 +0600
+
+    fixed package conflict
+
+[33mcommit 18f97538419df00c433788c8230763241ce83d1b[m
+Author: Rakhman <iwillshowyou.2017@gmail.com>
+Date:   Fri May 20 04:19:40 2022 +0600
+
+    fix
+
+[33mcommit b44446817e3f0c43645c39ade2f6fbf652db4884[m
+Author: Rakhman <iwillshowyou.2017@gmail.com>
+Date:   Fri May 20 04:16:47 2022 +0600
+
+    add lifecycle methods without implementation. Moved activity packages to a single packege for more readablity.
+
+[33mcommit 191f4070d43839d38b1bfead073a2ea14aa1a037[m
+Author: Rakhman <iwillshowyou.2017@gmail.com>
+Date:   Fri May 20 03:31:18 2022 +0600
+
+    initial commit
