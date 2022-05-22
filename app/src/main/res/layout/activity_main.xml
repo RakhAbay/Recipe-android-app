@@ -54,35 +54,43 @@
 
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/all_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="15dp"
                 android:background="@drawable/button"
+                android:onClick="chooseAll"
                 android:text="All"
                 android:textColor="@color/white" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/pasta_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="15dp"
                 android:background="@color/white"
+                android:onClick="choosePasta"
                 android:text="Pasta"
 
                 android:textColor="#a3a3a3" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/burger_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="15dp"
                 android:background="@color/white"
                 android:text="Burger"
+                android:onClick="chooseBurger"
                 android:textColor="#a3a3a3" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/beef_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="15dp"
                 android:background="@color/white"
+                android:onClick="chooseBeef"
                 android:text="Beef"
                 android:textColor="#a3a3a3" />
         </LinearLayout>

@@ -43,7 +43,7 @@ public class RecipeAppWidget extends AppWidgetProvider {
                     0, clickIntent, 0);
 
             RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.recipe_app_widget);
-//            views.setOnClickPendingIntent(R.id.widget_button, buttonPendingIntent);
+            views.setOnClickPendingIntent(R.id.widget_text, buttonPendingIntent);
 //            views.setCharSequence(R.id.widget_button, "setText", buttonText);
             views.setRemoteAdapter(R.id.widget_stack_view, serviceIntent);
             views.setEmptyView(R.id.widget_stack_view, R.id.widget_empty_view);
