@@ -1,6 +1,6 @@
-package com.example.recipeapp;
+package com.example.recipeapp.widget;
 
-import static com.example.recipeapp.RecipeAppWidget.ACTION_REFRESH;
+import static com.example.recipeapp.widget.RecipeAppWidget.ACTION_REFRESH;
 
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
@@ -14,6 +14,7 @@ import android.widget.RemoteViews;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.recipeapp.R;
 import com.example.recipeapp.activites.RecipeDetails.RecipeDetailsActivity;
 
 public class WidgetConfig extends AppCompatActivity {

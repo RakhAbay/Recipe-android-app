@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context=".WidgetConfig">
+    tools:context=".widget.WidgetConfig">
 
     <EditText
         android:id="@+id/edit_text_button"

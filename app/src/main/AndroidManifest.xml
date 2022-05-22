@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RecipeApp">
         <receiver
-            android:name=".RecipeAppWidget"
+            android:name=".widget.RecipeAppWidget"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -24,7 +24,7 @@
                 android:resource="@xml/recipe_app_widget_info" />
         </receiver>
 
-        <activity android:name=".WidgetConfig"
+        <activity android:name=".widget.WidgetConfig"
             android:exported="false">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
@@ -32,7 +32,7 @@
         </activity>
 
         <service
-            android:name=".WidgetService"
+            android:name=".widget.WidgetService"
             android:permission="android.permission.BIND_REMOTEVIEWS" />
 
         <activity

@@ -1,6 +1,6 @@
-package com.example.recipeapp;
+package com.example.recipeapp.widget;
 
-import static com.example.recipeapp.WidgetConfig.SHARED_PREFS;
+import static com.example.recipeapp.widget.WidgetConfig.SHARED_PREFS;
 
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.RemoteViews;
 import android.widget.Toast;
 
+import com.example.recipeapp.R;
 import com.example.recipeapp.activites.RecipeDetails.RecipeDetailsActivity;
 
 /**

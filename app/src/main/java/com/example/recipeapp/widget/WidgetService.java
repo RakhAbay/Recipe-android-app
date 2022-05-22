@@ -1,4 +1,4 @@
-package com.example.recipeapp;
+package com.example.recipeapp.widget;
 
 
 import android.appwidget.AppWidgetManager;
@@ -8,6 +8,7 @@ import android.os.SystemClock;
 import android.widget.RemoteViews;
 import android.widget.RemoteViewsService;
 
+import com.example.recipeapp.R;
 import com.example.recipeapp.dto.RecipeDto;
 import com.example.recipeapp.dto.RecipesSearchResultsDto;
 import com.example.recipeapp.listeners.OnRecipeSearchApiListener;

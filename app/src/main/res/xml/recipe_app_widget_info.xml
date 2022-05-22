@@ -10,4 +10,4 @@
     android:resizeMode="horizontal|vertical"
     android:updatePeriodMillis="3600000"
     android:widgetCategory="home_screen"
-    android:configure="com.example.recipeapp.WidgetConfig"/>
+    android:configure="com.example.recipeapp.widget.WidgetConfig"/>
