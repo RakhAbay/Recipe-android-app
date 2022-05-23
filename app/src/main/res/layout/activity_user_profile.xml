@@ -29,7 +29,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="15dp"
                 android:text="Username"
-                android:textColor="@color/white"
+                android:textColor="@color/mainText"
                 android:textSize="26sp"
                 android:textStyle="bold" />
 
@@ -51,12 +51,45 @@
            android:orientation="vertical"
            android:layout_centerInParent="true"
            >
+
            <LinearLayout
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:orientation="horizontal"
                android:paddingLeft="25dp"
                android:padding="25dp">
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center"
+                   android:paddingLeft="20dp"
+                   android:text="Dark Theme"
+                   android:textColor="@color/mainText" />
+
+               <Switch
+                   android:id="@+id/mode2"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   app:layout_constraintBottom_toTopOf="@+id/textView"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toTopOf="parent"
+                   tools:ignore="UseSwitchCompatOrMaterialXml"
+                   android:layout_marginLeft="150dp"/>
+
+           </LinearLayout>
+
+
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"
+               android:paddingLeft="25dp"
+               android:padding="25dp">
+
+
 
                <ImageView
                    android:layout_width="36dp"
@@ -69,7 +102,8 @@
                    android:layout_height="wrap_content"
                    android:layout_gravity="center"
                    android:paddingLeft="20dp"
-                   android:text="Email" />
+                   android:text="Email"
+                   android:textColor="@color/mainText"/>
 
            </LinearLayout>
 
@@ -93,7 +127,8 @@
                    android:layout_height="wrap_content"
                    android:layout_gravity="center"
                    android:paddingLeft="20dp"
-                   android:text="Favorities" />
+                   android:text="Favorities"
+                   android:textColor="@color/mainText"/>
            </LinearLayout>
 
 

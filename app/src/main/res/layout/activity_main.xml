@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
         android:text="Find Best Recipe \nfor cooking"
-        android:textColor="@color/black"
+        android:textColor="@color/mainText"
 
         android:textSize="30sp"
         android:textStyle="bold"
@@ -31,12 +31,12 @@
 
         <SearchView
             android:id="@+id/search_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_rounded"
             android:focusable="false"
             android:iconifiedByDefault="false"
-            android:layout_width="match_parent"
-            android:queryHint="Search..."
-            android:layout_height="wrap_content"
-            android:background="@drawable/background_rounded" />
+            android:queryHint="Search..." />
     </RelativeLayout>
 
     <HorizontalScrollView

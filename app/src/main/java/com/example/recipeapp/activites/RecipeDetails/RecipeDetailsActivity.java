@@ -96,7 +96,7 @@ public class RecipeDetailsActivity extends AppCompatActivity  {
         Log.i("DEBUG", loggedInUser.toString());
         add_fav.setOnClickListener(v -> {
             if(loggedInUser.getUsername() == ""){
-                startActivity(new Intent(this, LoginActivity.class));
+                startActivity(new Intent(this, LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP));
                 return;
             }
             try {
@@ -142,6 +142,7 @@ public class RecipeDetailsActivity extends AppCompatActivity  {
         Intent myIntent = getIntent();
         if (!(myIntent.getStringExtra("username") == null)) {
             intent.putExtra("username", myIntent.getStringExtra("username"));
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
         }
         startActivity(intent);
     }

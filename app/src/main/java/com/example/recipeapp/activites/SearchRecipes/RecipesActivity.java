@@ -215,7 +215,7 @@ public class RecipesActivity extends AppCompatActivity
 
                 Intent recipeDetailsIntent = new Intent(getApplicationContext(), RecipeDetailsActivity.class);
                 recipeDetailsIntent.putExtra("recipeId", currentRecipe.getId());
-
+                recipeDetailsIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(recipeDetailsIntent);
             }
         });
@@ -230,18 +230,20 @@ public class RecipesActivity extends AppCompatActivity
         if (!(loggedInUser.getUsername() == "")) {
             loginIntentButton.setVisibility(View.GONE);
         } else {
-            profileIntentButton.setVisibility(View.GONE);
+            //profileIntentButton.setVisibility(View.GONE);
         }
 
         profileIntentButton.setOnClickListener(v -> {
-            if (loggedInUser.getUsername() != "") {
+            //if (loggedInUser.getUsername() != "") {
                 Intent intent = new Intent(this, UserProfile.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
-            }
+            //}
         });
         loginIntentButton.setOnClickListener(v -> {
             if (loggedInUser.getUsername() == "") {
                 Intent intent = new Intent(this, LoginActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
             }
         });
@@ -299,6 +301,7 @@ public class RecipesActivity extends AppCompatActivity
 
     public void loginIntent(View view) {
         Intent intent = new Intent(this, LoginActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
         startActivity(intent);
     }
 }

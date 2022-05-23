@@ -18,10 +18,12 @@
 
 
     <color name="mainText">#000000</color>
+    <color name="mainText2">#FFFFFF</color>
     <color name="secondaryText">#4a4a4a</color>
     <color name="hintText">#4a4a4a</color>
     <color name="login">#4a4a4a</color>
     <color name="loginBackground">#FFFFFFFF</color>
+    <color name="mainBackground">#FFFFFF</color>
 
 
     <color name="light_blue_50">#FFE1F5FE</color>

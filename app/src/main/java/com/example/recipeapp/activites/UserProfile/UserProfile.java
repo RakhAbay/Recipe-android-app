@@ -2,12 +2,16 @@ package com.example.recipeapp.activites.UserProfile;
 
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import com.example.recipeapp.activites.Favorites.FavoritesActivity;
 import com.example.recipeapp.activites.SearchRecipes.RecipesActivity;
@@ -22,10 +26,42 @@ public class UserProfile extends AppCompatActivity {
     View favoriteView;
     LoggedInUser loggedInUser;
 
+    private Switch aSwitch2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
+
+        SharedPreferences appSettingPrefs = getSharedPreferences("AppSettingPrefs", 0);
+        SharedPreferences.Editor sharedPreferencesEdit = appSettingPrefs.edit();
+        Boolean isNightModeOn = appSettingPrefs.getBoolean("NightMode", false);
+
+        aSwitch2 = findViewById(R.id.mode2);
+
+        if(isNightModeOn){
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            aSwitch2.setChecked(true);
+        }else{
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
+
+        aSwitch2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if(isChecked){
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                    sharedPreferencesEdit.putBoolean("NightMode", true);
+                    sharedPreferencesEdit.apply();
+                }else{
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                    sharedPreferencesEdit.putBoolean("NightMode", false);
+                    sharedPreferencesEdit.apply();
+                }
+
+            }
+        });
+
         loggedInUser = LoggedInUser.getInstance();
 
         username = findViewById(R.id.username);
@@ -37,7 +73,7 @@ public class UserProfile extends AppCompatActivity {
         favoriteView = findViewById(R.id.profile_favorites);
 
         favoriteView.setOnClickListener(view -> {
-            startActivity(new Intent(this, FavoritesActivity.class));
+            startActivity(new Intent(this, FavoritesActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP));
         });
 
         Button logoutButton = findViewById(R.id.logout);
@@ -45,7 +81,7 @@ public class UserProfile extends AppCompatActivity {
             loggedInUser.setUserId(0L);
             loggedInUser.setUsername("");
             loggedInUser.setEmail("");
-            startActivity(new Intent(this, RecipesActivity.class));
+            startActivity(new Intent(this, RecipesActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP));
         });
     }
 

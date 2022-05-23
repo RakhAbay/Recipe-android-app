@@ -20,6 +20,7 @@
         <color name="wet_asphalt">#171717</color>
 
         <color name="mainText">#FFFFFF</color>
+        <color name="mainText2">#000000</color>
         <color name="secondaryText">#4a4a4a</color>
         <color name="hintText">#FFFFFF</color>
         <color name="login">#FFFFFF</color>
