@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:text="5 recipes of the day"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/mainText"/>
+        android:textColor="@color/white"/>
 
     <FrameLayout
         android:layout_width="match_parent"

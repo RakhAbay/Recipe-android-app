@@ -34,7 +34,7 @@ public class RecipeDetailsActivity extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_movie_details);
+        setContentView(R.layout.activity_recipe_details);
 
         RetrofitManager retrofitManager = new RetrofitManager(this);
 
