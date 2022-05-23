@@ -46,22 +46,6 @@ public class LoginActivity extends AppCompatActivity {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         }
 
-//        aSwitch2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
-//                if(isChecked){
-//                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-//                    sharedPreferencesEdit.putBoolean("NightMode", true);
-//                    sharedPreferencesEdit.apply();
-//                }else{
-//                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-//                    sharedPreferencesEdit.putBoolean("NightMode", false);
-//                    sharedPreferencesEdit.apply();
-//                }
-//
-//            }
-//        });
-
         retrofitManager = new RetrofitManager(this);
 
         EditText usernameText = findViewById(R.id.login_username);

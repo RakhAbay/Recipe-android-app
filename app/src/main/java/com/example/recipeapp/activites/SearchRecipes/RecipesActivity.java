@@ -230,15 +230,15 @@ public class RecipesActivity extends AppCompatActivity
         if (!(loggedInUser.getUsername() == "")) {
             loginIntentButton.setVisibility(View.GONE);
         } else {
-            //profileIntentButton.setVisibility(View.GONE);
+            profileIntentButton.setVisibility(View.GONE);
         }
 
         profileIntentButton.setOnClickListener(v -> {
-            //if (loggedInUser.getUsername() != "") {
+            if (loggedInUser.getUsername() != "") {
                 Intent intent = new Intent(this, UserProfile.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
-            //}
+            }
         });
         loginIntentButton.setOnClickListener(v -> {
             if (loggedInUser.getUsername() == "") {
