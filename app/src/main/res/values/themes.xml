@@ -17,4 +17,12 @@
         <item name="textColor">@color/colorBackground</item>
         <item name="loginTextColor">@color/black</item>
     </style>
+
+    <style name="Theme.RecipeApp.AppWidgetContainerParent" parent="@android:style/Theme.DeviceDefault">
+        <item name="appWidgetRadius">8dp</item>
+        <item name="appWidgetPadding">4dp</item>
+        <item name="appWidgetInnerRadius">4dp</item>
+    </style>
+
+    <style name="Theme.RecipeApp.AppWidgetContainer" parent="Theme.RecipeApp.AppWidgetContainerParent" />
 </resources>
