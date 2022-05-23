@@ -102,7 +102,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sign_up"
-            android:textColor="@color/secondaryText"/>
+            android:textColor="@color/mainText"/>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/sign_up"
