@@ -48,8 +48,6 @@ public class RegistrationActivity extends AppCompatActivity {
         Intent intent = new Intent(this, com.example.recipeapp.activites.Auth.LoginActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
         startActivity(intent);
-
-
     }
 
 }
